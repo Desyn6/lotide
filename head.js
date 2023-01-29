@@ -5,7 +5,7 @@ const assertEqual = function(actual, expected) {
   if (actual === expected) {
     printOut = `✔️ Assertion Passed: ${actual} === ${expected}`;
   } else {
-    printOut = `❌ Assertion Failed: ${actual} !=== ${expected}`;
+    printOut = `❌ Assertion Failed: ${actual} !== ${expected}`;
   }
   
   console.log(printOut);
