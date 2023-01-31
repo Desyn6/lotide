@@ -18,7 +18,7 @@ const countOnly = function(allItems, itemsToCount) {
   // let objCount;
   // for (let itemType in itemsToCount) {
   //   if (itemsToCount[itemType]) {
-  //     objCount
+  //     objCount = 0;
   //     for (let item of allItems) {
   //       if (item === itemType) {
   //         objCount++
@@ -28,8 +28,21 @@ const countOnly = function(allItems, itemsToCount) {
   //   }
   // }
 
+  /* second self-attempt with less iterating */
+  // for (let item in itemsToCount) {
+  //   if (itemsToCount[item]) {
+  //     results[item] = 0;
+  //   }
+  // }
+  
+  // for (let element of allItems) {
+  //   if (results[element] >= 0) {
+  //     results[element] += 1;
+  //   }
+  // }
+
   /* attempt following exercise description */
-  // loop through items in allItems
+  /* loop through items in allItems */
   for (const item of allItems) {
     // check itemsToCount if items is truthy for counting
     if (itemsToCount[item]) {
@@ -42,6 +55,7 @@ const countOnly = function(allItems, itemsToCount) {
       }
     }
   }
+
   return results;
 };
 
@@ -63,3 +77,5 @@ assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined);
 assertEqual(result1["Fang"], 2);
 assertEqual(result1["Agouhanna"], undefined);
+
+console.log(result1)
