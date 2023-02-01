@@ -14,33 +14,18 @@ const assertEqual = function(actual, expected) {
 const countOnly = function(allItems, itemsToCount) {
   const results = {};
 
-  /* original attempt without reading through exercise description */
-  // let objCount;
-  // for (let itemType in itemsToCount) {
-  //   if (itemsToCount[itemType]) {
-  //     objCount = 0;
-  //     for (let item of allItems) {
-  //       if (item === itemType) {
-  //         objCount++
-  //       }
-  //     }
-  //     results[itemType] = objCount;
-  //   }
-  // }
-
-  /* second self-attempt with less iterating */
+  /* second attempt revised by Ebenezer Igbinoba (mentor) */
   // for (let item in itemsToCount) {
   //   if (itemsToCount[item]) {
-  //     results[item] = 0;
+  //     if(allItems.includes(item)) {
+  //       const itemCount = allItems.filter(el => el === item).length
+  //       results[item] = itemCount;
+  //     } else {
+  //       results[item] = 0;
+  //     }
   //   }
   // }
   
-  // for (let element of allItems) {
-  //   if (results[element] >= 0) {
-  //     results[element] += 1;
-  //   }
-  // }
-
   /* attempt following exercise description */
   /* loop through items in allItems */
   for (const item of allItems) {
@@ -78,4 +63,4 @@ assertEqual(result1["Karima"], undefined);
 assertEqual(result1["Fang"], 2);
 assertEqual(result1["Agouhanna"], undefined);
 
-console.log(result1)
+console.log(result1);
