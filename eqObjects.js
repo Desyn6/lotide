@@ -2,7 +2,6 @@ function eqObjects(objOne, objTwo) {
   // Initial check: do the two objs have the same number of keys
   // I don't like how it looks when I nest the for..in loop in the else
   if (Object.keys(objOne).length !== Object.keys(objTwo).length) {
-    console.log("haha object not even same length");
     return false;
   }
   
@@ -12,7 +11,6 @@ function eqObjects(objOne, objTwo) {
     const valueTwo = objTwo[key];
 
     if (!valueTwo) { //check if objTwo has the same keys
-      console.log("haha object keys not same");
       return false;
 
     } else if (
@@ -20,21 +18,17 @@ function eqObjects(objOne, objTwo) {
       !Array.isArray(valueOne) &&
       valueOne !== null
     ) {
-      console.log("haha I can't do objects as values yet");
       return false;
 
     } else if (Array.isArray(valueOne)) { // array check
       if (!eqArrays(valueOne, valueTwo)) { // nest if and call eqArrays
-        console.log("haha array mismatch");
         return false;
       }
     } else if (valueOne !== valueTwo) { // primitive check
-      console.log("haha primitive mismatch");
       return false;
     }
   }
 
-  console.log("all keys check out!");
   return true;
 }
 
