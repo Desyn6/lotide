@@ -12,14 +12,24 @@ const assertEqual = function(actual, expected) {
 };
 
 function findKeyByValue(inputObject, searchValue) {
-  const objectValues = Object.values(inputObject);
-  
-  return Object.keys(inputObject)[objectValues.indexOf(searchValue)];
+  /* Solution using indexOf */
+
+  // const objectValues = Object.values(inputObject);
+  // return Object.keys(inputObject)[objectValues.indexOf(searchValue)];
+
+  /* Solution using Object.keys */
+  const objectKeys = Object.keys(inputObject);
+
+  for (let key of objectKeys) {
+    if (inputObject[key] === searchValue) {
+      return key;
+    }
+  }
 }
 
 // LHL-supplied tests
 
-const bestTVShowsByGenre = { 
+const bestTVShowsByGenre = {
   sci_fi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama:  "The Wire"
@@ -37,7 +47,7 @@ const chouxRecipe = {
   Salt:   '2g',
   Sugar:  '3g',
   Egg:    '200g',
-}
+};
 
 assertEqual(findKeyByValue(chouxRecipe, "120g"), "Water");
 assertEqual(findKeyByValue(chouxRecipe, "1000g"), undefined);
