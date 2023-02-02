@@ -11,7 +11,7 @@ function countLetters(inputString) {
       totalCount[char] += 1;
 
       // if char is not in object, introduce to object and set to 1
-    } else if (!totalCount[char]) {
+    } else {
       totalCount[char] = 1;
     }
   }
