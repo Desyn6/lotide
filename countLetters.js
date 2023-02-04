@@ -1,4 +1,4 @@
-function countLetters(inputString) {
+const countLetters = function(inputString) {
   const noSpaces = inputString.replace(/\W/g, ''); //filter out spaces
   const totalCount = {}; // declare empty object to populate
 
@@ -17,6 +17,6 @@ function countLetters(inputString) {
   }
   
   return totalCount;
-}
+};
 
 console.log(countLetters("Lighthouse in ThE HoUSe"));

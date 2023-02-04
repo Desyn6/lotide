@@ -12,7 +12,7 @@ const assertEqual = function(actual, expected) {
 };
 
 
-function eqArrays(arrayOne, arrayTwo) {
+const eqArrays = function(arrayOne, arrayTwo) {
   // compare length of array1/2
   // this catches cases like [1, 2, 3] and [1, 2]
   if (arrayOne.length !== arrayTwo.length) {
@@ -28,7 +28,7 @@ function eqArrays(arrayOne, arrayTwo) {
 
   // only true if none of the bools are false
   return true;
-}
+};
 
 // test eqArrays using assertEqual
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS

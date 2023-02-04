@@ -17,8 +17,8 @@ const countOnly = function(allItems, itemsToCount) {
   /* second attempt revised by Ebenezer Igbinoba (mentor) */
   for (let item in itemsToCount) {
     if (itemsToCount[item]) {
-      if(allItems.includes(item)) {
-        const itemCount = allItems.filter(el => el === item).length
+      if (allItems.includes(item)) {
+        const itemCount = allItems.filter(el => el === item).length;
         results[item] = itemCount;
       } else {
         results[item] = 0;
@@ -41,7 +41,7 @@ const countOnly = function(allItems, itemsToCount) {
   //   }
   // }
 
-  return results; 
+  return results;
 };
 
 const firstNames = [

@@ -1,4 +1,23 @@
-function eqObjects(objOne, objTwo) {
+// include eqArrays to call within eqObjects
+const eqArrays = function(arrayOne, arrayTwo) {
+  // compare length of array1/2
+  // this catches cases like [1, 2, 3] and [1, 2]
+  if (arrayOne.length !== arrayTwo.length) {
+    return false;
+  }
+
+  // loop to compare each element of array1/2
+  for (let i = 0; i < arrayOne.length; i++) {
+    if (arrayOne[i] !== arrayTwo[i]) {
+      return false;
+    }
+  }
+  
+  return true; // only true if none of the bools are false
+};
+
+// code for eqObjects
+const eqObjects = function(objOne, objTwo) {
   // Initial check: do the two objs have the same number of keys
   // I don't like how it looks when I nest the for..in loop in the else
   if (Object.keys(objOne).length !== Object.keys(objTwo).length) {
@@ -30,7 +49,7 @@ function eqObjects(objOne, objTwo) {
   }
 
   return true;
-}
+};
 
 // self tests
 
@@ -107,20 +126,3 @@ console.log(eqObjects(baseObj, objFive));
 
 console.log("Test 6, cannot handle objects");
 console.log(eqObjects(baseObjTwo, baseObj));
-
-function eqArrays(arrayOne, arrayTwo) {
-  // compare length of array1/2
-  // this catches cases like [1, 2, 3] and [1, 2]
-  if (arrayOne.length !== arrayTwo.length) {
-    return false;
-  }
-
-  // loop to compare each element of array1/2
-  for (let i = 0; i < arrayOne.length; i++) {
-    if (arrayOne[i] !== arrayTwo[i]) {
-      return false;
-    }
-  }
-  
-  return true; // only true if none of the bools are false
-}

@@ -11,7 +11,7 @@ const assertEqual = function(actual, expected) {
   console.log(printOut);
 };
 
-function findKeyByValue(inputObject, searchValue) {
+const findKeyByValue = function(inputObject, searchValue) {
   /* Solution using indexOf */
 
   // const objectValues = Object.values(inputObject);
@@ -25,7 +25,7 @@ function findKeyByValue(inputObject, searchValue) {
       return key;
     }
   }
-}
+};
 
 // LHL-supplied tests
 

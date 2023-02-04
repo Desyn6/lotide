@@ -1,4 +1,4 @@
-function letterPositions(inputString) {
+const letterPositions = function(inputString) {
   const letterBank = {};
 
   for (let i = 0; i < inputString.length; i++) {
@@ -7,7 +7,7 @@ function letterPositions(inputString) {
 
     if (char !== ' ') {
       if (letterBank[char]) { // if key exists for char
-        letterBank[char].push(i); // push i to existing index at key=char 
+        letterBank[char].push(i); // push i to existing index at key=char
   
       } else {
         letterBank[char] = [i]; // declare key with i if key does not exist yet
@@ -15,6 +15,6 @@ function letterPositions(inputString) {
     }
   }
   return letterBank;
-}
+};
 
 console.log(letterPositions("lighthouse in the house"));

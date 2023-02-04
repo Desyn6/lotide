@@ -2,7 +2,7 @@
 
 const exp = require('constants');
 
-function eqObjects(objOne, objTwo) {
+const eqObjects = function(objOne, objTwo) {
   // Initial check: do the two objs have the same number of keys
   // I don't like how it looks when I nest the for..in loop in the else
   if (Object.keys(objOne).length !== Object.keys(objTwo).length) {
@@ -34,9 +34,9 @@ function eqObjects(objOne, objTwo) {
   }
 
   return true;
-}
+};
 
-function eqArrays(arrayOne, arrayTwo) {
+const eqArrays = function(arrayOne, arrayTwo) {
   // compare length of array1/2
   // this catches cases like [1, 2, 3] and [1, 2]
   if (arrayOne.length !== arrayTwo.length) {
@@ -52,7 +52,8 @@ function eqArrays(arrayOne, arrayTwo) {
 
   // only true if none of the bools are false
   return true;
-}
+
+};
 
 const assertObjectsEqual = function(actual, expected) {
   const inspect = require('util').inspect;
@@ -64,12 +65,12 @@ const assertObjectsEqual = function(actual, expected) {
     out = `❌ Assertion Failed: [${inspect(actual)}] !== [${inspect(expected)}]`;
   }
   return out;
-}
+};
 
 // This test should pass
 console.log(assertObjectsEqual({a: 1, b: 2}, {a: 1, b: 2}));
 // This test should pass
-console.log(assertObjectsEqual({a: 1, b: [1, "str"]}, {a: 1, b: [1, "str"]})); 
+console.log(assertObjectsEqual({a: 1, b: [1, "str"]}, {a: 1, b: [1, "str"]}));
 // This test should fail
 console.log(assertObjectsEqual({a: 1, b: 1}, {a:1, b: 2}));
 // This test should fail
