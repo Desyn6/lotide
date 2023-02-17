@@ -1,16 +1,26 @@
+const assert = require('chai').assert;
 const middle = require('../middle');
-const assertArraysEqual = require('../assertArraysEqual');
 
-// test if middle() mutates input array
-let testArray = [1, 2, 3, 4, 5, 6];
-middle(testArray);
-assertArraysEqual(testArray, [1, 2, 3, 4, 5, 6]);
-
-// test if middle() yields intended outputs
-assertArraysEqual(middle([1]), []);
-assertArraysEqual(middle([1, 2]), []);
-assertArraysEqual(middle([1, 2, 3]), [2]);
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
-assertArraysEqual(middle(["Malcome", "in", "the", "Middle"]), ["in", "the"]);
+describe("#middle", () => {
+  it("returns [] for [1]", () => {
+    assert.deepEqual(middle([1]), []);
+  });
+  it("returns [] for [1, 2]", () => {
+    assert.deepEqual(middle([1, 2]), []);
+  });
+  it("returns [2] for [1, 2, 3]", () => {
+    assert.deepEqual(middle([1, 2, 3]), [2]);
+  });
+  it("returns [2, 3] for [1, 2, 3, 4]", () => {
+    assert.deepEqual(middle([1, 2, 3, 4]), [2, 3]);
+  });
+  it("returns [3] for [1, 2, 3, 4, 5", () => {
+    assert.deepEqual(middle([1, 2, 3, 4, 5]), [3]);
+  });
+  it("returns [3, 4] for [1, 2, 3, 4, 5, 6]", () => {
+    assert.deepEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
+  });
+  it('returns ["in", "the"] for ["Malcolm", "in", "the", "Middle"]', () => {
+    assert.deepEqual(middle(["Malcolm", "in", "the", "Middle"]), ["in", "the"]);
+  });
+});

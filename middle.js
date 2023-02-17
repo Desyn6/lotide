@@ -1,8 +1,4 @@
-// Test/assertion functions
-const assertArraysEqual = require('./assertArraysEqual');
-
 // Implement middle.js function
-
 const middle = function(inputArray) {
   const middleVal = [];
   // calc index of middle value
