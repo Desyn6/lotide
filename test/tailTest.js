@@ -1,5 +1,5 @@
-const tail = require('../tail')
-const assertEqual = require('../assertEqual')
+const tail = require('../tail');
+const assertEqual = require('../assertEqual');
 
 /*test that the tail function does not modify the input array*/
 const words = ["Yo Yo", "Lighthouse", "Labs"];
