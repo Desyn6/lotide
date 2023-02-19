@@ -1,5 +1,9 @@
 /* Function code for returning tail elements of an input array */
 const tail = function(inputArray) {
+  if (!inputArray) {
+    return undefined;
+  }
+
   let outputArray = [];
 
   /*to trim out first value, start index at 1*/

@@ -19,4 +19,4 @@ const countLetters = function(inputString) {
   return totalCount;
 };
 
-console.log(countLetters("Lighthouse in ThE HoUSe"));
+module.exports = countLetters;

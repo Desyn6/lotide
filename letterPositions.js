@@ -14,7 +14,8 @@ const letterPositions = function(inputString) {
       }
     }
   }
+
   return letterBank;
 };
 
-console.log(letterPositions("lighthouse in the house"));
+module.exports = letterPositions;

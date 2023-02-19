@@ -11,4 +11,10 @@ describe("#tail", () => {
   it("returns [[1, 2], 3] for [1, [1, 2], 3]", () => {
     assert.deepEqual(tail([1, [1, 2], 3]), [[1, 2], 3]);
   });
+  it("returns undefined if the input array is undefined", () => {
+    assert.strictEqual(tail(), undefined);
+  });
+  it("returns [] for []", () => {
+    assert.deepEqual(tail([]), []);
+  });
 });
