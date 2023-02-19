@@ -1,35 +1,30 @@
-// import eqArrays
 const eqArrays = require('./eqArrays');
 
-// code for eqObjects
 const eqObjects = function(objOne, objTwo) {
   if (!objOne || !objTwo) {
     return false;
   }
-  // Initial check: do the two objs have the same number of keys
-  // I don't like how it looks when I nest the for..in loop in the else
+
   if (Object.keys(objOne).length !== Object.keys(objTwo).length) {
     return false;
   }
   
-  // use objOne as comparison base
   for (const key in objOne) {
     const valueOne = objOne[key];
     const valueTwo = objTwo[key];
 
-    if (!valueTwo) { //check if objTwo has the same keys
+    if (!valueTwo) {
       return false;
 
-    } else if (typeof valueOne === 'object' && // object check
-      !Array.isArray(valueOne)) {
+    } else if (typeof valueOne === 'object' && !Array.isArray(valueOne)) {
       if (!eqObjects(valueOne, valueTwo)) {
         return false;
       }
-    } else if (Array.isArray(valueOne)) { // array check
-      if (!eqArrays(valueOne, valueTwo)) { // nest if and call eqArrays
+    } else if (Array.isArray(valueOne)) {
+      if (!eqArrays(valueOne, valueTwo)) {
         return false;
       }
-    } else if (valueOne !== valueTwo) { // primitive check
+    } else if (valueOne !== valueTwo) {
       return false;
     }
   }

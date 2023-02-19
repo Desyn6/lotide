@@ -3,7 +3,7 @@ const eqArrays = require('./eqArrays');
 const assertArraysEqual = function(arrayOne, arrayTwo) {
   let printOut;
 
-  if (eqArrays(arrayOne, arrayTwo)) { // call eqArrays to compare arr1/2
+  if (eqArrays(arrayOne, arrayTwo)) {
     printOut = `✔️ Assertion Passed: [${arrayOne}] === [${arrayTwo}]`;
   } else {
     printOut = `❌ Assertion Failed: [${arrayOne}] !== [${arrayTwo}]`;

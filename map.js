@@ -1,10 +1,10 @@
 const map = function(inputArray, callbackFn) {
-  const output = [];   // intialize empty array for results
+  const output = [];
 
-  for (const element of inputArray) { //loop through all array elements
-    // push result of callbackFn with element as argument to output array
+  for (const element of inputArray) {
     output.push(callbackFn(element));
   }
+  
   return output;
 };
 

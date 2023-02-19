@@ -1,4 +1,3 @@
-// include helper functions
 const exp = require('constants');
 const eqObjects = require('./eqObjects');
 
@@ -11,6 +10,7 @@ const assertObjectsEqual = function(actual, expected) {
   } else {
     out = `❌ Assertion Failed: [${inspect(actual)}] !== [${inspect(expected)}]`;
   }
+
   return out;
 };
 

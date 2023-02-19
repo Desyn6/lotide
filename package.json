@@ -1,6 +1,6 @@
 {
   "name": "@desyn6/lotide",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "lodash clone produced as part of courseware at Lighthouse Labs Inc.",
   "main": "assertArraysEqual.js",
   "directories": {

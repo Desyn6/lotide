@@ -1,7 +1,6 @@
 const countOnly = function(allItems, itemsToCount) {
   const results = {};
 
-  /* second attempt revised by Ebenezer Igbinoba (mentor) */
   for (let item in itemsToCount) {
     if (itemsToCount[item]) {
       if (allItems.includes(item)) {
